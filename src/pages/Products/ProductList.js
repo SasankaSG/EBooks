@@ -24,7 +24,7 @@ export const ProductList = () => {
         const data = await getProductList(searchTerm);    
         initialProductList(data);
       } catch (error){
-        console.log(error.message);
+        console.log(error.message); 
       }
 
     }
