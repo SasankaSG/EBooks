@@ -1,15 +1,15 @@
-import { HeroSection } from '../Home/components/HeroSection';
-import { Faq } from './components/Faq';
-import { FeaturedProducts } from './components/FeaturedProducts';
-import { Testimonials } from './components/Testimonials';
-import { useTitles } from "../../hooks/useTitles";
+import { useTitle } from "../../hooks/useTitle";
+import { Hero } from "./components/Hero";
+import { FeaturedProducts } from "./components/FeaturedProducts";
+import { Testimonials } from "./components/Testimonials";
+import { Faq } from "./components/Faq";
 
 export const HomePage = () => {
-  useTitles("Access Latest Computer Science eBooks")
+  useTitle("Access Latest Computer Science eBooks");
 
   return (
     <main>
-        <HeroSection />
+        <Hero />
         <FeaturedProducts />
         <Testimonials />
         <Faq />

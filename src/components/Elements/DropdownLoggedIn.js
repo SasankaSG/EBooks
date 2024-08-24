@@ -1,23 +1,27 @@
-import { Link, useNavigate } from "react-router-dom"
+import { useState } from "react";
+import { useEffect } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import { getUser, logout } from "../../services";
-import { useEffect, useState } from "react";
 
 export const DropdownLoggedIn = ({setDropdown}) => {
     const navigate = useNavigate();
     const [user, setUser] = useState({});
 
     useEffect(() => {
-        async function fetchData() {
-            const data = await getUser();
-            data.email ? setUser(data) : handleLogout();
-            
+        async function fetchData(){
+            try{
+                const data = await getUser();
+                data.email ? setUser(data) : handleLogout();
+            } catch(error){
+                toast.error(error.message, { closeButton: true, position: "bottom-center" });
+            }            
         }
         fetchData();
     }, []); //eslint-disable-line
 
     function handleLogout(){
         logout();
-
         setDropdown(false);
         navigate("/");
     }

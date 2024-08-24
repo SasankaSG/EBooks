@@ -1,10 +1,9 @@
-import { cartReducer } from "../reducers/cartReducer";
-
-const { createContext, useContext, useReducer } = require("react")
+import { createContext, useContext, useReducer } from "react";
+import { cartReducer } from "../reducers";
 
 const cartInitialState = {
-    cartList: [], //add product obj from product card handle click
-    total: 0  //cart has final amount
+    cartList: [],
+    total: 0
 }
 
 const CartContext = createContext(cartInitialState);
@@ -26,7 +25,7 @@ export const CartProvider = ({children}) => {
     }
 
     function removeFromCart(product){
-        const updatedList = state.cartList.filter((item) => item.id !== product.id);
+        const updatedList = state.cartList.filter(item => item.id !== product.id);
         const updatedTotal = state.total - product.price;
 
         dispatch({
@@ -57,7 +56,7 @@ export const CartProvider = ({children}) => {
     }
 
     return (
-        <CartContext.Provider value={value} >
+        <CartContext.Provider value={value}>
             {children}
         </CartContext.Provider>
     )

@@ -1,14 +1,12 @@
 export { HomePage } from "./Home/HomePage";
-export { ProductList } from  "./Products/ProductList";
+export { ProductsList } from "./Products/ProductsList";
 export { ProductDetail } from "./ProductDetail";
+
+export { CartPage } from "./Cart/CartPage";
+export { OrderPage } from "./Order/OrderPage";
+export { DashboardPage } from "./Dashboard/DashboardPage";
 
 export { Login } from "./Login";
 export { Register } from "./Register";
-
-export { CartPage } from "./Cart/CartPage";
-
-export { OrderPage } from "./Orders/OrderPage";
-
-export { DashboardPage } from "./Dashboard/DashboardPage";
 
 export { PageNotFound } from "./PageNotFound";
