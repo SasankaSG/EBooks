@@ -18,7 +18,7 @@ export async function getProductItem(id) {
     return data; 
 }
 
-export async function getFeaturedList(params) {
+export async function getFeaturedList() {
     const response = await fetch(`${process.env.REACT_APP_HOST}/444/featured_products`);
     const data = await response.json();
 
